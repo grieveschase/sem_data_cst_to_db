@@ -1,5 +1,6 @@
 
 import sqlite3
+import datetime
 '''
 Chase Grieves March 2020
 sqlite3 database helper functions, allows for quick setup and population of sqlite database.
@@ -30,6 +31,7 @@ def db_init(db_file, db_table, db_col_names, db_col_types,db_col_unique=None):
         sql_init = "CREATE TABLE IF NOT EXISTS "+db_table+" "+col_define+");"
     try:
         conn = sqlite3.connect(db_file, detect_types = sqlite3.PARSE_DECLTYPES | sqlite3.PARSE_COLNAMES)
+        print("sqlite3.connect(db_file, detect_types = sqlite3.PARSE_DECLTYPES | sqlite3.PARSE_COLNAMES) DONE")
         cur = conn.cursor()
         cur.execute(sql_init)
         conn.commit()
