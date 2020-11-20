@@ -116,7 +116,7 @@ for cst_file in cst_files:
 	if count%100 == 0:
 		print("Total completed %s of %s"%(str(count),str(len(cst_files))))
 	#pull data that is popped up in the past x mins back.
-	mins_back = 60
+	mins_back = 15
 	if time_delta.total_seconds() < mins_back*60:
 		cst_files_added += 1
 		cst_data = []
